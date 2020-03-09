@@ -1,5 +1,5 @@
-Who AM I
+A Knock At The Window
 
-Who am I is a text based python3 game.
+A Knock At The Window is a text based python3 game.
 
 To play the game run the game.py using python3.
