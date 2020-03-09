@@ -214,8 +214,7 @@ class kitchen(object):
         cabinet and the killer got you.
         """))
         return 'death'
-
-
+    
     elif choice == "2":
         print(dedent("""
         Bad choice looks like the killer
