@@ -70,8 +70,8 @@ class bedroom(object):
             Lets hope next time you are just as lucky.
             """))
             print(dedent("""
-            Go to another room by entering what room you would like to go to
-            bathroom, kitchen, office, living_room, or basement.
+            Go to another room by entering what room you would like to go to.
+            But remember you can't go in the same room again.
             """))
         elif choice == "2":
             print(dedent("""
@@ -160,8 +160,8 @@ class bathroom(object):
             Lets hope next time you are just as lucky.
             """))
                     print(dedent("""
-            Go to another room by entering what room you would like to go to
-            kitchen, office, living_room, or basement.
+            Go to another room by entering what room you would like to go to.
+            But remember you can't go in the same room again.
             """))
         elif choice == "2":
             print(dedent("""
@@ -214,7 +214,7 @@ class kitchen(object):
         cabinet and the killer got you.
         """))
         return 'death'
-    
+
     elif choice == "2":
         print(dedent("""
         Bad choice looks like the killer
@@ -248,8 +248,8 @@ class kitchen(object):
         Lets hope next time you are just as lucky.
         """))
         print(dedent("""
-        Go to another room by entering what room you would like to go to
-        office, living_room, or basement.
+        Go to another room by entering what room you would like to go to.
+        But remember you can't go in the same room again.
         """))
 
 
@@ -320,8 +320,8 @@ class office(object):
         Lets hope next time you are just as lucky.
         """))
         print(dedent("""
-        Go to another room by entering what room you would like to go to
-         living_room or basement.
+        Go to another room by entering what room you would like to go to.
+        But remember you can't go in the same room again.
         """))
 
 
@@ -395,8 +395,8 @@ class living_room(object):
             Lets hope next time you are just as lucky.
             """))
             print(dedent("""
-            Go to another room by entering what room you would like to go to
-             basement.
+            Go to another room by entering what room you would like to go to.
+            But remember you can't go in the same room again.
             """))
 
 
