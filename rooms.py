@@ -1,5 +1,64 @@
 from textwrap import dedent
 
+#print(dedent("""
+#A Knock at the window
+#by Ethan Kubistek
+#3/2/20
+#"""))
+
+class Introduction(object):
+    def event(self):
+
+        print(dedent("""
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⠿⠿⢻⣿⣿⣿⣿⣽⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠛⠛⠛⠛⠛⠛⠋⠉⠉⠉⣿⣿⣿⣿⢹⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣏⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣷⣿⣿⣿⣿
+⣿⣿⣿⣿⣻⣿⣿⢸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⢿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⠀⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⡆⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⡇⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣷⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⢿⣿⣧⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣇⣀⣀⣠⣤⣤⣤⠤⠤⠶⠶⢶⣶⣒⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⡼⡧⠤⠤⢤⣐⣒⣒⣒⣒⣒⣿⣭⣭⣽⣿⣿⣿⣤⣶⣶⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⠿⠿⠿⠿⠟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⠛⠛⠋⠉⠉⠉⠉⠉⠉⠉⠉⠁⠈⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⢿⣿⡟⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣯⣿⣿⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣼⣧⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣀⣠⣤⣤⣤⡤⠤⠤⠤⠴⠾⠿⠛⠓⠒⠒⠒⠚⠛⣋⣉⣉⣉⣉⣹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+    """))
+        print(dedent("""
+    A knock at the Widow is a text based
+    python game you will be able move room to
+    room and have 3 choices you can make in each room.
+    """))
+        print(dedent("""
+    There is a killer in your house and you have to move
+    though the rooms and hopefully avoid the killer with
+    with your choices.
+    """))
+        print(dedent("""
+    You start by hearing a knock on your window followed by a crash
+    now you just have to surive. The rooms you can run into are the bedroom,
+    bathroom, kitchen, office, living_room, and basement.
+    """))
+        print(dedent("good luck"))
+        print(dedent("""
+    There is a killer in your house and you have to move
+    though the rooms and hopefully avoid the killer with
+    with your choices. But don't go back to the same rooms.
+    """))
+
+        return 'bedroom'
+
 class bedroom(object):
 
 
@@ -73,6 +132,9 @@ class bedroom(object):
             Go to another room by entering what room you would like to go to.
             But remember you can't go in the same room again.
             """))
+
+            return 'bathroom'
+
         elif choice == "2":
             print(dedent("""
                 Bad choice looks like the killer saw your feet under the bed
@@ -132,7 +194,7 @@ class bathroom(object):
 
 
         if choice == "1":
-                    print(dedent("""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+            print(dedent("""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡔⠊⠉⠳⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -155,14 +217,16 @@ class bathroom(object):
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠀⠀⡈⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"""))
-                    print(dedent("""
+            print(dedent("""
             You made a good choice and avoided the killer this time.
             Lets hope next time you are just as lucky.
             """))
-                    print(dedent("""
+            print(dedent("""
             Go to another room by entering what room you would like to go to.
             But remember you can't go in the same room again.
             """))
+            return 'kitchen'
+
         elif choice == "2":
             print(dedent("""
             Bad choice looks like the killer hear you using the toilet.
@@ -179,6 +243,8 @@ class bathroom(object):
             return 'death'
 class kitchen(object):
     def event (self):
+
+
         print(dedent("""
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣠⣤⣶⣶⣿⣿⣿⣿⡇
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢤⣶⣶⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⣿⣿⡇
@@ -197,33 +263,33 @@ class kitchen(object):
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠠⠇⠘⠾⠿⠿⣟⠟⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⡀⠤⠀⠀⠂⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠇⠀⠡⠀⠀⠀⠉⠙⣿⣿⣿⠀⠀⠀⠀⠨⡀⠀⠀⠀⠀⠀
             """))
-    print(dedent("""
+        print(dedent("""
             Your kitchen is a place for enjoy meant and fun with family and friends
             where hoildays start with a great meal not a knife in your back.
             """))
-    print(dedent("""
+        print(dedent("""
                     What do you do?
                     1. Try and hide in a cabinet
                     2. Fight the killer with chefs knives
                     3. Hide in the pantry
                     """))
-    choice = input("> ")
-    if choice == "1":
-        print(dedent("""
+        choice = input("> ")
+        if choice == "1":
+            print(dedent("""
         Bad choice looks like you could't fit in the
         cabinet and the killer got you.
         """))
-        return 'death'
+            return 'death'
 
-    elif choice == "2":
-        print(dedent("""
+        elif choice == "2":
+            print(dedent("""
         Bad choice looks like the killer
         had a gun and ended you.
         """))
-        return 'death'
+            return 'death'
 
-    elif choice == "3":
-        print(dedent("""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        elif choice == "3":
+            print(dedent("""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⢰⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣾⣿⣿⣿⣿⣿⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⣿⡉⠉⣉⠉⠉⢹⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀
 ⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠈⠄⠀⠠⠀⣯⠁⢀⡿⠂⠀⢸⣿⠀⠀⡈⠉⠉⠉⠉⠉⠁⠀⠐⠀⠀⠀⠀⠒⠒⠀⢸⡇
@@ -243,47 +309,49 @@ class kitchen(object):
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠀⢀⠃⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀"""))
-        print(dedent("""
+            print(dedent("""
         You made a good choice and avoided the killer this time.
         Lets hope next time you are just as lucky.
         """))
-        print(dedent("""
+            print(dedent("""
         Go to another room by entering what room you would like to go to.
         But remember you can't go in the same room again.
         """))
+
+            return 'office'
 
 
 class office(object):
 
     def event (self):
         print(dedent(""""""))
-    print(dedent("""
+        print(dedent("""
             Your kitchen is a place for enjoy meant and fun with family and friends
             where hoildays start with a great meal not a knife in your back.
             """))
-    print(dedent("""
+        print(dedent("""
                     What do you do?
                     1. Sit in the desk cair
                     2. Hide under the desk
                     3. Hide behind the curtains
                     """))
-    choice = input("> ")
-    if choice == "1":
-        print(dedent("""
+        choice = input("> ")
+        if choice == "1":
+            print(dedent("""
         Yous sat in the chair like an idoit of course you died
         """))
-        return 'death'
+            return 'death'
 
 
-    elif choice == "2":
-        print(dedent("""
+        elif choice == "2":
+            print(dedent("""
         Bad choice looks like that
         was the first place he looked.
         """))
-        return 'death'
+            return 'death'
 
-    elif choice == "3":
-        print(dedent("""
+        elif choice == "3":
+            print(dedent("""
    ⣆⠀⠀⠀⢀⣴⣦⠀⠀⠀⠀⣴⣄⠀⠀⠀⣠⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣄⠀⠀⠀⢀⣴⣄⠀⠀⠀⢀⣴⡄⠀⠀⠀⣰⠀⠀
 ⠀⠀⡛⢳⣄⣀⠞⢛⣛⠻⣄⠀⠜⢛⡛⢢⠀⣴⠛⡃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡛⢧⣀⣠⠟⢛⡛⢳⣄⠀⠜⣛⠛⢆⢀⡴⢛⠀⠀
 ⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣶⣶⣶⣶⣷⣶⣶⣶⣾⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀
@@ -315,21 +383,20 @@ class office(object):
 ⠀⠀⠻⣿⣿⣿⠏⠀⠹⣿⣿⣿⡟⠁⠙⣿⣿⣿⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⠋⠀⠹⣿⣿⣿⡟⠁⠹⣿⣿⣿⣿⠋⠀
 ⠀⠀⠀⠘⠿⠏⠀⠀⠀⠈⠿⠟⠀⠀⠀⠘⢿⠿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⠋⠀⠀⠀⠘⠿⠏⠀⠀⠀⠸⢿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀"""))
-        print(dedent("""
+            print(dedent("""
         You made a good choice and avoided the killer this time.
         Lets hope next time you are just as lucky.
         """))
-        print(dedent("""
+            print(dedent("""
         Go to another room by entering what room you would like to go to.
         But remember you can't go in the same room again.
         """))
+            return 'living_room'
 
 
 class living_room(object):
-
-    def event (self):
-        def event (self):
-            print(dedent("""
+    def event(self):
+        print(dedent("""
 ⠀⠀⠀⠀⠀⠀⢠⣼⣤⠀⠻⠀⣔⠄⠀⠀⠀⠀⠀⠀⠀⠀⢸⠉⠉⠉⠉⠉⠛⠛⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣻⣯⣶
 ⠀⠀⠀⠀⠀⢀⣿⣿⣿⣇⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿
 ⣤⣀⠀⠀⠀⠸⠿⠿⠿⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣤⣤⣧⣳⣎⣧⡤⣽⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣷⡼⠇⣿
@@ -399,6 +466,8 @@ class living_room(object):
             But remember you can't go in the same room again.
             """))
 
+            return 'basement'
+
 
 class basement(object):
 
@@ -421,42 +490,42 @@ class basement(object):
 ⠀⢰⣶⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⢶⠶⠶⡶⠶⡶⠶⡶⠶⠶⢶⢶⠀⠀
 ⠀⠘⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠓⠒⠒⠒⠒⠒⠚⠒⠂⠒⠒⠚⠒⠀⠀
 """))
-    print(dedent("""
+        print(dedent("""
             The basement a creepy and dark place that
             you come to do your laundry and go to your car.
             """))
-    print(dedent("""
+        print(dedent("""
                     What do you do?
                     1. Hide in the laundry machine.
                     2. Hide behinde all of your shit you keep down there.
                     3. Get in your car and drive away.
                     """))
-    choice = input("> ")
-    if choice == "1":
-        print(dedent("""
+        choice = input("> ")
+        if choice == "1":
+            print(dedent("""
         Bad choice looks like you could't fit behide
         in the laundry machine.
         """))
-        return 'death'
+            return 'death'
 
 
-    elif choice == "2":
-        print(dedent("""
+        elif choice == "2":
+            print(dedent("""
         Bad choice looks like that was the first place he looked
         since you sneezed becuase of all your dusty shit.
         """))
-        return 'death'
+            return 'death'
 
-    elif choice == "3":
-        print(dedent("""
+        elif choice == "3":
+            print(dedent("""
         You made a good choice and avoided the killer this time.
         Lets hope next time you are just as lucky.
         """))
-        return 'Win'
+            return 'win'
 
 
 class Death(object):
-      def event (self):
+    def event (self):
         print(dedent("""
             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⣴⣿⣿⣶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -509,8 +578,7 @@ class Death(object):
 
 
 class Win(object):
-
-    def event (self):
+    def event(self):
         print(dedent("""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢂⠈⣄⠌⠄⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -544,7 +612,7 @@ class Win(object):
 ⠀⠀⠀⠀⠀⠀⠀⠀⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠿⠚⠿⠟⠛⠁⠈⠁⠈⠉⣀⢀⠰⠀⠀⠁⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 """))
-print(dedent("""
+        print(dedent("""
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⡟⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢻⣿⣿⣿⣿⠛⠛⣿⣿⣿⣿⡟⠛⠛⣿⠛⠛⠛⠛⠛⠛⠛⠛⣿⠛⠛⣿⣿⣿⡟⠛⠛⣿⣿
 ⣿⣿⣿⣿⣿⣇⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⠀⠀⣿⣿⣿⣿⡇⠀⠀⣿⠀⠀⣀⣀⣀⡀⠀⠀⣿⠀⠀⣿⣿⣿⡇⠀⠀⣿⣿
@@ -570,4 +638,4 @@ print(dedent("""
 
 
 
-exit(1)
+        exit(1)

@@ -2,15 +2,9 @@
 
 
 
-
+import map
 import Engine
 
-
-Game = Engine.Map()
-Game.room()
-
-print(dedent("""
-A Knock at the window
-by Ethan Kubistek
-3/2/20
-"""))
+area = map.Map('intro')
+game = Engine.Engine(area)
+game.play()
